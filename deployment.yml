@@ -1,0 +1,32 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: simple-html-rolling-update
+  labels: 
+    app: simple-html-app
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: simple-html-app
+  template:
+    metadata:
+      labels:
+        app: simple-html-app
+        role: rolling-update
+    spec:
+      containers:
+      - name: simple-html-container
+        image: andresaaap/simple-index
+        imagePullPolicy: "Always"
+        ports:
+        - containerPort: 80
+        readinessProbe:
+          httpGet:
+            path: /
+            port: 80
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 1
