@@ -51,7 +51,7 @@ minikube service <NAME_OF_SERVICE_RESOURCE>
 
 6. Test the website in your browser
 
-![website image](https://github.com/andresaaap/cicd-only-deploying-circleci/blob/main/img/website-image.png?raw=true)
+![website image](https://github.com/andresaaap/simple-html-rolling-update-kubernetes/blob/main/img/website-image.png?raw=true)
 
 7. Now we want to make a change in the website and execute a rolling update. We are going to start by changing the website's background color to green. Plese do this your self.
 
@@ -76,7 +76,7 @@ kubectl set image deployment/simple-html-rolling-update simple-html-container=YO
 
 11. Test the website in your browser
 
-![green website image](https://github.com/andresaaap/cicd-only-deploying-circleci/blob/main/img/website-image-green.png?raw=true)
+![green website image](https://github.com/andresaaap/simple-html-rolling-update-kubernetes/blob/main/img/website-image-green.png?raw=true)
 
 
 
